@@ -11,7 +11,8 @@ import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class ClothesTest {
+public class CheckTshirtTest {
+	
 	 private WebDriver driver;
 
 	    @Before
@@ -23,14 +24,16 @@ public class ClothesTest {
 	    }
   
   @Test
-  public void clothestest() {
+  public void checkTshirt() {
     driver.get("http://automationpractice.com/index.php");
-    driver.manage().window().setSize(new Dimension(783, 824));
+    driver.manage().window().setSize(new Dimension(782, 831));
     driver.findElement(By.cssSelector(".sf-menu > li:nth-child(3) > a")).click();
     driver.findElement(By.cssSelector(".product_img_link > .replace-2x")).click();
+    assertThat(driver.findElement(By.cssSelector("h1")).getText(), is("Faded Short Sleeve T-shirts"));
     driver.findElement(By.cssSelector(".exclusive > span")).click();
     driver.findElement(By.cssSelector(".button-medium > span")).click();
     assertThat(driver.findElement(By.linkText("Faded Short Sleeve T-shirts")).getText(), is("Faded Short Sleeve T-shirts"));
+    driver.findElement(By.cssSelector(".standard-checkout > span")).click();
   }
   
   @After
