@@ -6,7 +6,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-public class NewTest {
+
+public class SauceDemoCheckoutTest {
 	 private WebDriver driver;
 
 	    @Before
@@ -18,7 +19,7 @@ public class NewTest {
 	    }
  
   @Test
-  public void newtest() {
+  public void checkoutTest() {
     driver.get("https://www.saucedemo.com/");
     driver.manage().window().setSize(new Dimension(1552, 840));
     driver.findElement(By.cssSelector("*[data-test=\"username\"]")).click();
