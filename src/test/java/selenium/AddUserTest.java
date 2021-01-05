@@ -15,7 +15,7 @@ public class AddUserTest {
 
     @Before
     public void setup() {
-        System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "src/test/resources/resources/chromedriver.exe");
         driver = new ChromeDriver();
         driver.manage().window().setSize(new Dimension(1366, 768));
 
