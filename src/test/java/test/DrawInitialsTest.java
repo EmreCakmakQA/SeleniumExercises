@@ -37,7 +37,7 @@ public class DrawInitialsTest {
 
 	@Before
 	public void setup() {
-		driver.get(nav.URL);
+		driver.get(HomePage.URL);
 	}
 
 	@AfterClass
@@ -49,7 +49,18 @@ public class DrawInitialsTest {
 	public void drawInitial() throws InterruptedException {
 		WebElement canvas = driver.findElement(By.cssSelector("#catch"));
 		nav.clickBrush();
-		action.moveToElement(canvas).clickAndHold().moveByOffset(100, 100).build().perform();
+		// E
+		action.moveToElement(canvas).clickAndHold().moveByOffset(0, -200).moveByOffset(100, 0).click()
+				.moveToElement(canvas, 0, 0).clickAndHold().moveByOffset(100, 0).click().moveToElement(canvas, 0, 0)
+				.clickAndHold().moveByOffset(0, -100).moveByOffset(100, 0).click().moveToElement(canvas, 0, 0).build()
+				.perform();
+		Thread.sleep(500);
+
+		// C
+		action.moveByOffset(200, 0).clickAndHold().moveByOffset(0, -200).moveByOffset(100, 0).click()
+				.moveToElement(canvas, 200, 0).clickAndHold().moveByOffset(100, 0).click().moveToElement(canvas, 0, 0)
+				.build().perform();
+		Thread.sleep(2000);
 	}
 
 }
