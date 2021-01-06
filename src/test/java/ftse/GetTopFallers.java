@@ -18,10 +18,11 @@ public class GetTopFallers {
     }
   
     @Test
-	  public void getTopFallers() {
+	  public void getTopFallers() throws InterruptedException {
 	    driver.get("https://www.hl.co.uk/shares/stock-market-summary/ftse-100");
 	    driver.manage().window().setSize(new Dimension(1536, 824));
 	    driver.findElement(By.cssSelector(".one-line:nth-child(3) strong")).click();
+	    Thread.sleep(2000);
 	  }
   
   @After
